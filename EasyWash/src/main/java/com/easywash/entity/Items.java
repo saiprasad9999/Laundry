@@ -13,6 +13,8 @@ public class Items {
 	private int itemId;
 	private String itemName;
 	private int qty;
+	@ManyToOne
+	private Customer customer;
 	
 	public int getItemId() {
 		return itemId;
@@ -32,12 +34,23 @@ public class Items {
 	public void setQty(int qty) {
 		this.qty = qty;
 	}
-	public Items(int itemId, String itemName, int qty) {
+
+	
+	public Customer getCustomer() {
+		return customer;
+	}
+	public void setCustomer(Customer customer) {
+		this.customer = customer;
+	}
+	public Items(int itemId, String itemName, int qty, Customer customer) {
 		super();
 		this.itemId = itemId;
 		this.itemName = itemName;
 		this.qty = qty;
+		this.customer = customer;
 	}
+	
+	
 	
 	public Items(String itemName, int qty) {
 		super();
@@ -50,8 +63,9 @@ public class Items {
 	}
 	@Override
 	public String toString() {
-		return "Items [itemId=" + itemId + ", itemName=" + itemName + ", qty=" + qty + "]";
+		return "Items [itemId=" + itemId + ", itemName=" + itemName + ", qty=" + qty + ", customer=" + customer + "]";
 	}
+	
 	
 	
 	

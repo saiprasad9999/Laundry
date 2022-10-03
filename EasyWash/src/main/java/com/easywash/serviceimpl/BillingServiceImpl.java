@@ -16,6 +16,12 @@ public class BillingServiceImpl implements BillingService{
 	public Billing saveBill(Billing bill) {
 		return billRepo.save(bill);
 	}
+
+	@Override
+	public Billing getBill(int id) {
+		// TODO Auto-generated method stub
+		return billRepo.findById(id).get();
+	}
 	
 
 }

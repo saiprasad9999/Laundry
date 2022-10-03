@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Item List</title>
+</head>
+<body>
+<form novalidate action="", th:action="@{/ItemCreate}"  method="post" th:object="${items}" >
+  
+  <div class="form-group col-md-4">
+      <label for="itemName">Item</label>
+      <select name="itemName" class="form-control" >
+        <option selected>Choose...</option>
+        <option>Jeans</option>
+        <option>Trouser</option>
+        <option>T-Shirts</option>
+        <option>Shirts</option>
+        <option>Saree</option>
+      </select>
+    </div>
+    <div class="form-group col-md-2">
+      <label for="qty">Qty</label>
+      <input type="number" class="form-control" name="qty" >
+    </div>
+
+  
+  <button type="submit" class="btn btn-primary">Save</button>
+  <div>
+  <a th:href="@{/bill}" class="btn btn-primary">Create Bill</a>
+  </div>
+</form>
+</body>
+</html>

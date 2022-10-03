@@ -1,101 +1,27 @@
 <!doctype html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="ISO-8859-1">
 <title>EasyWash</title>
 </head>
 <body>
 
-<form novalidate action="", th:action="@{/create}"  method="post" th:object="${customer}" th:object="${items}">
+	<form novalidate action="", th:action="@{/create}"  method="POST" th:object="${customer}" >
   <div class="form-row">
     <div class="form-group col-md-6">
       <label for="name">Name</label>
-      <input type="text" class="form-control" id="name" placeholder="Enter name" th:value="${customer.name}">
+      <input type="text" class="form-control"  name="name" placeholder="Enter name" th:value="${customer.name}">
     </div>
     <div class="form-group col-md-6">
       <label for="mobileNo">Mobile No</label>
-      <input type="text" class="form-control" id="mobileNo" placeholder="Mobile No" th:value="${customer.mobNo}">
+      <input type="text" class="form-control"  name="mobNo" placeholder="Mobile No" th:value="${customer.mobNo}">
     </div>
   </div>
-  <div class="form-group col-md-4">
-      <label for="itemName">Item</label>
-      <select id="itemName" class="form-control" th:value="${items.itemName}">
-        <option selected>Choose...</option>
-        <option>Jeans</option>
-        <option>Trouser</option>
-        <option>T-Shirts</option>
-        <option>Shirts</option>
-        <option>Saree</option>
-      </select>
-    </div>
-    <div class="form-group col-md-2">
-      <label for="qty">Qty</label>
-      <input type="number" class="form-control" id="qty" th:value="${items.qty}" >
-    </div>
-    <div class="form-group col-md-4">
-      <label for="itemName">Item</label>
-      <select id="itemName" class="form-control" th:value="${items.itemName}" >
-        <option selected>Choose...</option>
-         <option>Jeans</option>
-        <option>Trouser</option>
-        <option>T-Shirts</option>
-        <option>Shirts</option>
-        <option>Saree</option>
-      </select>
-    </div>
-    <div class="form-group col-md-2">
-      <label for="qty">Qty</label>
-      <input type="number" class="form-control" id="qty"th:value="${items.qty}"  >
-    </div>
-    <div class="form-group col-md-4">
-      <label for="itemName">Item</label>
-      <select id="itemName" class="form-control" th:value="${items.itemName}">
-        <option selected>Choose...</option>
-         <option>Jeans</option>
-        <option>Trouser</option>
-        <option>T-Shirts</option>
-        <option>Shirts</option>
-        <option>Saree</option>
-      </select>
-    </div>
-    <div class="form-group col-md-2">
-      <label for="qty">Qty</label>
-      <input type="number" class="form-control" id="qty" th:value="${items.qty}" >
-    </div>
-    <div class="form-group col-md-4">
-      <label for="itemName">Item</label>
-      <select id="itemName" class="form-control" th:value="${items.itemName}">
-        <option selected>Choose...</option>
-         <option>Jeans</option>
-        <option>Trouser</option>
-        <option>T-Shirts</option>
-        <option>Shirts</option>
-        <option>Saree</option>
-      </select>
-    </div>
-    <div class="form-group col-md-2">
-      <label for="qty">Qty</label>
-      <input type="number" class="form-control" id="qty"th:value="${items.qty}"  >
-    </div>
-    <div class="form-group col-md-4">
-      <label for="itemName">Item</label>
-      <select id="itemName" class="form-control" th:value="${items.itemName}" >
-        <option selected>Choose...</option>
-         <option>Jeans</option>
-        <option>Trouser</option>
-        <option>T-Shirts</option>
-        <option>Shirts</option>
-        <option>Saree</option>
-      </select>
-    </div>
-    <div class="form-group col-md-2">
-      <label for="qty">Qty</label>
-      <input type="number" class="form-control" id="qty" th:value="${items.qty}" >
-    </div>
-  </div>
-  
   <button type="submit" class="btn btn-primary">Save</button>
 </form>
+
+
 
 </body>
 </html>

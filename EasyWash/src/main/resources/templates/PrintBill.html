@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Bill</title>
+</head>
+<body>
+	<form novalidate action="", th:action="@{/printBill/{customer_id} (customer_id=${customer.customer_id})}"  method="GET" th:object="${customer}" >
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="name">Enter Customer Id</label>
+      <input type="number" class="form-control"  name="customer_id" placeholder="Enter Customer ID" >
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary">Get Bill</button>
+</form>
+</body>
+</html>

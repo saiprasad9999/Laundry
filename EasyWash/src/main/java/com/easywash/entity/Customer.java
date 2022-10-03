@@ -1,9 +1,9 @@
 package com.easywash.entity;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
-import java.util.Set;
-
+import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -13,7 +13,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
-import antlr.collections.List;
+
 
 @Entity
 public class Customer {
@@ -24,8 +24,8 @@ public class Customer {
     private String mobNo;
     private Date date;
     private Date delDate;
-    @OneToMany(cascade = CascadeType.ALL,fetch = FetchType.LAZY)
-    private Set<Items> items;
+    @OneToMany(cascade = CascadeType.ALL,fetch = FetchType.LAZY, mappedBy ="customer" )
+    private List<Items> list=new ArrayList<>();
     @OneToOne(cascade = CascadeType.ALL,fetch = FetchType.LAZY)
     private Billing bill;
     
@@ -63,19 +63,15 @@ public class Customer {
 		Date newDate=c.getTime();
 		this.delDate=newDate;
 	}
-	public Set<Items> getItems() {
-		return items;
-	}
-	public void setItems(Set<Items> items) {
-		this.items = items;
-	}
+	
 	public Billing getBill() {
 		return bill;
 	}
 	public void setBill(Billing bill) {
 		this.bill = bill;
 	}
-	public Customer(int customer_id, String name, String mobNo, Date date, Date delDate, Set<Items> items,
+	
+	public Customer(int customer_id, String name, String mobNo, Date date, Date delDate, List<Items> list,
 			Billing bill) {
 		super();
 		this.customer_id = customer_id;
@@ -83,16 +79,19 @@ public class Customer {
 		this.mobNo = mobNo;
 		this.date = date;
 		this.delDate = delDate;
-		
-		this.items = items;
+		this.list = list;
 		this.bill = bill;
 	}
-
-	public Customer(String name, String mobNo, Set<Items> items) {
+	public List<Items> getList() {
+		return list;
+	}
+	public void setList(List<Items> list) {
+		this.list = list;
+	}
+	public Customer(String name, String mobNo, List<Items> list) {
 		super();
 		this.name = name;
 		this.mobNo = mobNo;
-		
 		
 	}
 	public Customer() {
@@ -102,8 +101,9 @@ public class Customer {
 	@Override
 	public String toString() {
 		return "Customer [customer_id=" + customer_id + ", name=" + name + ", mobNo=" + mobNo + ", date=" + date
-				+ ", delDate=" + delDate + ", items=" + items + ", bill=" + bill + "]";
+				+ ", delDate=" + delDate + ", list=" + list + ", bill=" + bill + "]";
 	}
+	
     
 	
     

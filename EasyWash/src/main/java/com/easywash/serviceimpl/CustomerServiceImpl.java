@@ -19,4 +19,10 @@ public class CustomerServiceImpl implements CustomerService {
 		return customerRepo.save(customer);
 	}
 
+	@Override
+	public Customer getCustomer(int id) {
+	return	this.customerRepo.findById(id).get();
+		
+	}
+
 }
