@@ -13,7 +13,15 @@ public class Billing {
 	private int billNo;
 	private double weight;
 	private int price;
+	@OneToOne
+	private Customer customer;
 	
+	public Customer getCustomer() {
+		return customer;
+	}
+	public void setCustomer(Customer customer) {
+		this.customer = customer;
+	}
 	public int getBillNo() {
 		return billNo;
 	}
@@ -52,8 +60,9 @@ public class Billing {
 	}
 	@Override
 	public String toString() {
-		return "Billing [billNo=" + billNo + ", weight=" + weight + ", price=" + price + "]";
+		return "Billing [billNo=" + billNo + ", weight=" + weight + ", price=" + price + ", customer=" + customer + "]";
 	}
+	
 	
 	
 	
